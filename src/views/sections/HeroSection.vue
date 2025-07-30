@@ -1,6 +1,7 @@
 <template>
   <section class="hero-section">
-    <Logo :pointer="false" />
+    <h2 class="hero-section__title">Albert Ang</h2>
+
     <h2 class="hero-section__subtitle">Full Stack Developer &amp; Software Engineer</h2>
     <p class="hero-section__description">
       Pellentesque euismod, nisi eu consectetur cursus, nisl erat dictum urna, nec dictum ex enim ac
@@ -77,6 +78,13 @@
   text-align: center;
   margin-top: 0;
   padding-bottom: 76px;
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: hsl(var(--foreground));
+    margin-bottom: 0.5rem;
+  }
 
   &__subtitle {
     font-size: 1.25rem;

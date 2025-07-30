@@ -4,14 +4,16 @@
     @click="$emit('toggle')"
     :aria-label="enabled ? 'Disable clouds' : 'Enable clouds'"
   >
-    <PhCloud v-if="enabled" :size="28" weight="duotone" />
-    <PhCloudSun v-else :size="28" weight="duotone" />
+    <PhCloud v-if="enabled" :size="28" weight="duotone" :color="cloudColor" />
+    <PhCloudSun v-else :size="28" weight="duotone" :color="cloudColor" />
   </button>
 </template>
 
 <script setup lang="ts">
 import { PhCloud, PhCloudSun } from '@phosphor-icons/vue'
-defineProps<{ enabled: boolean }>()
+const props = defineProps<{ enabled: boolean }>()
+// Use a light blue color for clouds
+const cloudColor = '#90cdf4' // You can change to '#fff' for white if preferred
 </script>
 
 <style scoped lang="scss">
