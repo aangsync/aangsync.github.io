@@ -1,85 +1,71 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './views/layout/Header.vue'
+import CloudBackground from './views/layout/CloudBackground.vue'
+import HeroSection from './views/sections/HeroSection.vue'
+import AboutSection from './views/sections/AboutSection.vue'
+import ExperienceSection from './views/sections/ExperienceSection.vue'
+import ProjectsSection from './views/sections/ProjectsSection.vue'
+import ContactSection from './views/sections/ContactSection.vue'
+import { useClouds } from './composables/useClouds'
+const { cloudsEnabled } = useClouds()
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <CloudBackground :enabled="cloudsEnabled" />
+  <div class="app">
+    <Header />
+    <main class="app__main">
+      <section id="hero" class="app__section app__section--hero"><HeroSection /></section>
+      <section id="about" class="app__section app__section--about"><AboutSection /></section>
+      <section id="experience" class="app__section app__section--experience">
+        <ExperienceSection />
+      </section>
+      <section id="projects" class="app__section app__section--projects">
+        <ProjectsSection />
+      </section>
+      <section id="contact" class="app__section app__section--contact"><ContactSection /></section>
+    </main>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<style scoped lang="scss">
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+  &__main {
+    flex: 1 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  &__section {
+    width: 100%;
+  }
 }
 
 nav a.router-link-exact-active {
   color: var(--color-text);
 }
-
 nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
-
 nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
-
 nav a:first-of-type {
   border: 0;
 }
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+  .app__header {
+    padding-right: calc(var(--section-gap, 2rem) / 2);
   }
 }
 </style>

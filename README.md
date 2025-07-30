@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# aangsync.github.io
-=======
 # aangsync-site
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -65,4 +62,3 @@ npm run test:e2e -- --debug
 ```sh
 npm run lint
 ```
->>>>>>> 44e5cf9 (initial commit)

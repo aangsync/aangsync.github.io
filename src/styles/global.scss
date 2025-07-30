@@ -1,0 +1,13 @@
+@import './variables.scss';
+html,
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}

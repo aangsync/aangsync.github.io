@@ -1,0 +1,154 @@
+<template>
+  <section class="about-section">
+    <div class="about-section__content">
+      <h2 class="about-section__title">About Me</h2>
+      <p class="about-section__desc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu
+        consectetur cursus, nisl erat dictum urna, nec dictum ex enim ac enim. Integer nec odio nec
+        urna cursus faucibus.
+      </p>
+    </div>
+    <div class="about-section__features">
+      <div class="about-feature">
+        <div class="about-feature__icon about-feature__icon--blue">
+          <PhCode :size="32" weight="duotone" />
+        </div>
+        <div class="about-feature__title">Full Stack Development</div>
+        <div class="about-feature__desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt
+          consectetur.
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="about-feature__icon about-feature__icon--cyan">
+          <PhCloud :size="32" weight="duotone" />
+        </div>
+        <div class="about-feature__title">Cloud Architecture</div>
+        <div class="about-feature__desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="about-feature__icon about-feature__icon--teal">
+          <PhLightning :size="32" weight="duotone" />
+        </div>
+        <div class="about-feature__title">Async Programming</div>
+        <div class="about-feature__desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi
+          tristique senectus.
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
+</script>
+
+<style scoped lang="scss">
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0 4rem 0;
+
+  &__content {
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+  }
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: hsl(var(--foreground));
+  }
+  &__desc {
+    font-size: 1.15rem;
+    color: hsl(var(--foreground));
+    opacity: 0.8;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  &__features {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+.about-feature {
+  background: hsl(var(--background) / 0.6);
+  border: 1px solid hsl(var(--primary) / 0.08);
+  border-radius: 12px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 16px hsl(var(--primary) / 0.04);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+
+  &:hover {
+    border-color: hsl(var(--primary) / 0.18);
+    box-shadow: 0 4px 32px hsl(var(--primary) / 0.08);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    background: hsl(var(--primary) / 0.08);
+
+    &--blue {
+      background: #22334d;
+      color: #4fc3f7;
+    }
+    &--cyan {
+      background: #1e2e3e;
+      color: #00bcd4;
+    }
+    &--teal {
+      background: #1e3a34;
+      color: #26ffe6;
+    }
+  }
+  &__title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  &__desc {
+    font-size: 1rem;
+    color: hsl(var(--foreground));
+    opacity: 0.7;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-section__features {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .about-feature {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+</style>
