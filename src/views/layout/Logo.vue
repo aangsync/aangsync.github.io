@@ -29,18 +29,18 @@ const pointer = props.pointer ?? false
   margin-bottom: 0;
 
   &-tag {
-    color: hsl(var(--foreground));
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+    color: rgb(var(--foreground));
+    text-shadow: 0 0 20px rgb(var(--primary) / 0.2);
   }
   &-name {
-    color: hsl(var(--primary));
+    color: rgb(var(--primary));
     font-weight: bold;
     margin: 0 0.25rem;
-    text-shadow: 0 0 32px hsl(var(--primary) / 0.7);
-    background: hsl(var(--primary) / 0.15);
+    text-shadow: 0 0 32px rgb(var(--primary) / 0.7);
+    background: rgb(var(--primary) / 0.15);
     border-radius: 6px;
     padding: 0 0.5rem;
-    box-shadow: 0 0 32px hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 32px rgb(var(--primary) / 0.3);
   }
 }
 

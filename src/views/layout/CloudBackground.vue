@@ -62,7 +62,7 @@ function cloudStyle(i: number) {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/animations.scss';
+@use '@/styles/animations.scss';
 .cloud-bg {
   position: fixed;
   inset: 0;

@@ -95,13 +95,13 @@
   &__title {
     font-size: 2.4rem;
     font-weight: 700;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     text-align: center;
     margin-bottom: 0.5rem;
   }
   &__subtitle {
     font-size: 1.1rem;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     opacity: 0.7;
     text-align: center;
     margin-bottom: 2.5rem;
@@ -119,8 +119,8 @@
 }
 
 .project-card {
-  background: hsl(var(--background) / 0.6);
-  border: 1px solid hsl(var(--primary) / 0.08);
+  background: rgb(var(--background) / 0.6);
+  border: 1px solid rgb(var(--primary) / 0.08);
   border-radius: 12px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   min-width: 320px;
@@ -129,14 +129,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 2px 16px hsl(var(--primary) / 0.04);
+  box-shadow: 0 2px 16px rgb(var(--primary) / 0.04);
   transition:
     border-color 0.2s,
     box-shadow 0.2s;
 
   &:hover {
-    border-color: hsl(var(--primary) / 0.18);
-    box-shadow: 0 4px 32px hsl(var(--primary) / 0.08);
+    border-color: rgb(var(--primary) / 0.18);
+    box-shadow: 0 4px 32px rgb(var(--primary) / 0.08);
   }
 
   &__header {
@@ -149,7 +149,7 @@
   &__title {
     font-size: 1.18rem;
     font-weight: 600;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     flex: 1 1 auto;
   }
   &__badge {
@@ -163,7 +163,7 @@
     user-select: none;
   }
   &__desc {
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     opacity: 0.85;
     font-size: 1.05rem;
     margin-bottom: 1.1rem;
@@ -184,8 +184,8 @@
 
 .tag {
   display: inline-block;
-  background: hsl(var(--primary) / 0.13);
-  color: #4fc3f7;
+  background: rgb(var(--primary) / 0.13);
+  color: rgb(var(--primary));
   font-size: 0.95rem;
   font-weight: 500;
   border-radius: 6px;
@@ -198,8 +198,8 @@
   display: flex;
   align-items: center;
   gap: 0.4em;
-  background: hsl(var(--primary) / 0.07);
-  color: hsl(var(--foreground));
+  background: rgb(var(--primary) / 0.07);
+  color: rgb(var(--foreground));
   font-size: 1rem;
   font-weight: 500;
   border: none;
@@ -225,8 +225,8 @@
   color: #fff;
 }
 .project-btn:hover {
-  background: hsl(var(--primary) / 0.15);
-  color: hsl(var(--primary));
+  background: rgb(var(--primary) / 0.15);
+  color: rgb(var(--primary));
 }
 
 @media (max-width: 1100px) {

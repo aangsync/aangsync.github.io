@@ -84,13 +84,13 @@
   &__title {
     font-size: 2.4rem;
     font-weight: 700;
-    color: hsl(var(--foreground));
+    color: var(--foreground);
     text-align: center;
     margin-bottom: 0.5rem;
   }
   &__subtitle {
     font-size: 1.1rem;
-    color: hsl(var(--foreground));
+    color: var(--foreground);
     opacity: 0.7;
     text-align: center;
     margin-bottom: 2.5rem;
@@ -107,11 +107,11 @@
 }
 
 .experience-card {
-  background: hsl(var(--background) / 0.6);
-  border: 1px solid hsl(var(--primary) / 0.08);
+  background: rgb(var(--background) / 0.6);
+  border: 1px solid rgb(var(--primary) / 0.08);
   border-radius: 12px;
   padding: 2rem 2rem 1.5rem 2rem;
-  box-shadow: 0 2px 16px hsl(var(--primary) / 0.04);
+  box-shadow: 0 2px 16px rgb(var(--primary) / 0.04);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -120,8 +120,8 @@
     box-shadow 0.2s;
 
   &:hover {
-    border-color: hsl(var(--primary) / 0.18);
-    box-shadow: 0 4px 32px hsl(var(--primary) / 0.08);
+    border-color: rgb(var(--primary) / 0.18);
+    box-shadow: 0 4px 32px rgb(var(--primary) / 0.08);
   }
 
   &__header {
@@ -134,19 +134,19 @@
   &__role {
     font-size: 1.15rem;
     font-weight: 600;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     margin-bottom: 0.2rem;
   }
   &__company {
     font-size: 1.05rem;
-    color: #4fc3f7;
+    color: rgb(var(--primary));
     font-weight: 500;
     margin-bottom: 0.1rem;
   }
   &__period {
     font-size: 0.98rem;
     color: #4fc3f7;
-    background: hsl(var(--primary) / 0.07);
+    background: rgb(var(--primary) / 0.07);
     border-radius: 8px;
     padding: 0.3rem 1.1rem;
     font-weight: 500;
@@ -154,7 +154,7 @@
     white-space: nowrap;
   }
   &__desc {
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     opacity: 0.85;
     font-size: 1.05rem;
     margin-bottom: 0.5rem;
@@ -169,7 +169,7 @@
 
 .tag {
   display: inline-block;
-  background: hsl(var(--primary) / 0.1);
+  background: rgb(var(--primary) / 0.1);
   color: #4fc3f7;
   font-size: 0.95rem;
   font-weight: 500;

@@ -1,8 +1,8 @@
-@import './variables.scss';
+@use './variables.scss';
 html,
 body {
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
   font-family: system-ui, sans-serif;
   margin: 0;
   padding: 0;

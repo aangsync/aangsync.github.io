@@ -24,9 +24,9 @@ const cloudColor = '#90cdf4' // You can change to '#fff' for white if preferred
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  border: 1.5px solid hsl(var(--primary), 0.5);
+  border: 1.5px solid rgba(var(--primary), 0.5);
   background: transparent;
-  color: hsl(var(--primary));
+  color: rgb(var(--primary));
   font-size: 1.5rem;
   cursor: pointer;
   transition:
@@ -39,7 +39,7 @@ const cloudColor = '#90cdf4' // You can change to '#fff' for white if preferred
 }
 .toggle-box:focus,
 .toggle-box:hover {
-  border-color: hsl(var(--primary));
-  background: hsl(var(--primary) / 0.07);
+  border-color: rgb(var(--primary));
+  background: rgb(var(--primary) / 0.07);
 }
 </style>

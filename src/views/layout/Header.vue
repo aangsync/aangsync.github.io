@@ -1,8 +1,8 @@
 <template>
   <header class="header">
     <div class="header-section">
-      <Logo @click="scrollTo('hero')" :pointer="true" />
-      <nav>
+      <Logo @click="scrollTo('hero')" :pointer="true" class="header-section__logo" />
+      <nav class="header-section__nav">
         <a @click.prevent="scrollTo('about')">About</a>
         <a @click.prevent="scrollTo('experience')">Experience</a>
         <a @click.prevent="scrollTo('projects')">Projects</a>
@@ -41,24 +41,38 @@ function scrollTo(section: string) {
   backdrop-filter: blur(8px);
   z-index: 100;
   padding: 0.5rem 10rem;
-  background: hsl(var(--background) / 0.8);
+  background: rgb(var(--background) / 0.8);
   border-bottom: 1px solid rgb(38, 47, 64);
 
   .header-section {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex: 1;
+    }
+
+    &__nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
 
     &__toggle-icons {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
+      flex: 1;
     }
   }
 }
 nav a {
   margin: 0 1rem;
-  color: hsl(var(--foreground));
+  color: rgb(var(--foreground));
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;

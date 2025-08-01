@@ -61,11 +61,11 @@ import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
     font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
   }
   &__desc {
     font-size: 1.15rem;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     opacity: 0.8;
     margin: 0 auto;
     line-height: 1.7;
@@ -81,8 +81,8 @@ import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
 }
 
 .about-feature {
-  background: hsl(var(--background) / 0.6);
-  border: 1px solid hsl(var(--primary) / 0.08);
+  background: rgb(var(--background) / 0.6);
+  border: 1px solid rgb(var(--primary) / 0.08);
   border-radius: 12px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
 
@@ -90,14 +90,14 @@ import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 2px 16px hsl(var(--primary) / 0.04);
+  box-shadow: 0 2px 16px rgb(var(--primary) / 0.04);
   transition:
     border-color 0.2s,
     box-shadow 0.2s;
 
   &:hover {
-    border-color: hsl(var(--primary) / 0.18);
-    box-shadow: 0 4px 32px hsl(var(--primary) / 0.08);
+    border-color: rgb(var(--primary) / 0.18);
+    box-shadow: 0 4px 32px rgb(var(--primary) / 0.08);
   }
 
   &__icon {
@@ -109,7 +109,7 @@ import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
     border-radius: 50%;
     margin-bottom: 1.2rem;
     font-size: 2rem;
-    background: hsl(var(--primary) / 0.08);
+    background: rgb(var(--primary) / 0.08);
 
     &--blue {
       background: #22334d;
@@ -127,13 +127,13 @@ import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
   &__title {
     font-size: 1.15rem;
     font-weight: 600;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     margin-bottom: 0.5rem;
     text-align: center;
   }
   &__desc {
     font-size: 1rem;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     opacity: 0.7;
     text-align: center;
     line-height: 1.5;

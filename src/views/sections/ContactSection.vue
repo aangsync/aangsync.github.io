@@ -49,12 +49,12 @@
     h2 {
       font-size: 2.4rem;
       font-weight: 700;
-      color: hsl(var(--foreground));
+      color: rgb(var(--foreground));
       margin-bottom: 0.5rem;
     }
     p {
       font-size: 1.1rem;
-      color: hsl(var(--foreground));
+      color: rgb(var(--foreground));
       opacity: 0.7;
       margin: 0 auto;
       max-width: 600px;
@@ -76,11 +76,11 @@
   flex: 1 1 520px;
   min-width: 320px;
   max-width: 750px;
-  background: hsl(var(--background) / 0.6);
+  background: rgb(var(--background) / 0.6);
   border-radius: 12px;
   padding: 2.2rem 2rem 2rem 2rem;
-  box-shadow: 0 2px 16px hsl(var(--primary) / 0.04);
-  border: 1px solid hsl(var(--primary) / 0.08);
+  box-shadow: 0 2px 16px rgb(var(--primary) / 0.04);
+  border: 1px solid rgb(var(--primary) / 0.08);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -99,17 +99,17 @@
 
     label {
       font-size: 1.01rem;
-      color: hsl(var(--foreground));
+      color: rgb(var(--foreground));
       font-weight: 500;
       margin-bottom: 0.35rem;
     }
     input,
     textarea {
-      background: hsl(var(--background) / 0.35);
-      border: 1.5px solid hsl(var(--primary) / 0.13);
+      background: rgb(var(--background) / 0.35);
+      border: 1.5px solid rgb(var(--primary) / 0.13);
       border-radius: 7px;
       padding: 0.7rem 1rem;
-      color: hsl(var(--foreground));
+      color: rgb(var(--foreground));
       font-size: 1rem;
       font-family: inherit;
       transition:
@@ -121,7 +121,7 @@
     input:focus,
     textarea:focus {
       border-color: #4fc3f7;
-      background: hsl(var(--primary) / 0.07);
+      background: rgb(var(--primary) / 0.07);
     }
     textarea {
       min-height: 120px;
@@ -142,7 +142,7 @@
     transition:
       background 0.18s,
       color 0.18s;
-    box-shadow: 0 2px 12px hsl(var(--primary) / 0.08);
+    box-shadow: 0 2px 12px rgb(var(--primary) / 0.08);
   }
   &__submit:hover {
     background: #35b6f2;

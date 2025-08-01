@@ -4,9 +4,7 @@
 
     <h2 class="hero-section__subtitle">Full Stack Developer &amp; Software Engineer</h2>
     <p class="hero-section__description">
-      Pellentesque euismod, nisi eu consectetur cursus, nisl erat dictum urna, nec dictum ex enim ac
-      enim.<br />
-      Integer nec odio nec urna cursus faucibus.
+      I build accessible and mobile-friendly web applications that cater to diverse audiences.
     </p>
     <div class="hero-section__actions">
       <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -82,19 +80,19 @@
   &__title {
     font-size: 2.8rem;
     font-weight: 700;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     margin-bottom: 0.5rem;
   }
 
   &__subtitle {
     font-size: 1.25rem;
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     opacity: 0.85;
     margin-bottom: 0.5rem;
   }
 
   &__description {
-    color: hsl(var(--foreground));
+    color: rgb(var(--foreground));
     opacity: 0.7;
     margin-bottom: 2rem;
     font-size: 1.05rem;
@@ -122,7 +120,7 @@
         opacity 0.2s;
     }
     a:hover svg {
-      stroke: hsl(var(--primary));
+      stroke: rgb(var(--primary));
       opacity: 1;
     }
   }
@@ -133,9 +131,9 @@
   border-radius: 6px;
   font-size: 1rem;
   font-weight: 500;
-  border: 1px solid hsl(var(--primary));
+  border: 1px solid rgb(var(--primary));
   background: none;
-  color: hsl(var(--primary));
+  color: rgb(var(--primary));
   cursor: pointer;
   transition:
     background 0.2s,
@@ -144,20 +142,20 @@
   display: inline-block;
 }
 .btn-primary {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-  box-shadow: 0 2px 16px hsl(var(--primary) / 0.15);
+  background: rgb(var(--primary));
+  color: rgb(var(--primary-foreground));
+  box-shadow: 0 2px 16px rgb(var(--primary) / 0.15);
 }
 .btn-primary:hover {
-  background: hsl(var(--primary) / 0.85);
+  background: rgb(var(--primary) / 0.85);
 }
 .btn-outline {
   background: none;
-  color: hsl(var(--primary));
-  border: 1px solid hsl(var(--primary));
+  color: rgb(var(--primary));
+  border: 1px solid rgb(var(--primary));
 }
 .btn-outline:hover {
-  background: hsl(var(--primary) / 0.1);
+  background: rgb(var(--primary) / 0.1);
 }
 
 @media (max-width: 600px) {
