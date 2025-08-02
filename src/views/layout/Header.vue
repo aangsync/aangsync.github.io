@@ -42,7 +42,7 @@ function scrollTo(section: string) {
   z-index: 100;
   padding: 0.5rem 10rem;
   background: rgb(var(--background) / 0.8);
-  border-bottom: 1px solid rgb(38, 47, 64);
+  border-bottom: 1px solid rgb(var(--foreground) / 0.25);
 
   .header-section {
     display: flex;
