@@ -3,10 +3,17 @@
     <div class="about-section__content">
       <h2 class="about-section__title">About Me</h2>
       <p class="about-section__desc">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu
-        consectetur cursus, nisl erat dictum urna, nec dictum ex enim ac enim. Integer nec odio nec
-        urna cursus faucibus.
-      </p>
+        Currently, I'm a software engineer at Dirt Legal specializing in building beautiful solutions 
+        for a smooth customer experience. I've contributed to the creation and maintenance of various
+        aspects of the pre- and post-checkout experience while working cross-functionally, ensuring a
+        seamless and intuitive workflow.
+        </p>
+        <br />
+        <p class="about-section__desc">
+          When I'm not coding, I'm probably leveling up my calisthenics skills or cooking.
+
+        </p>
+      
     </div>
     <div class="about-section__features">
       <div class="about-feature">
@@ -15,17 +22,16 @@
         </div>
         <div class="about-feature__title">Full Stack Development</div>
         <div class="about-feature__desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt
-          consectetur.
+          I have experience in building full stack applications using a variety of technologies, including C#, Vue.js, and TypeScript.
         </div>
       </div>
       <div class="about-feature">
         <div class="about-feature__icon about-feature__icon--cyan">
-          <PhCloud :size="32" weight="duotone" />
+          <PhDevices :size="32" weight="duotone" />
         </div>
-        <div class="about-feature__title">Cloud Architecture</div>
+        <div class="about-feature__title">Mobile-Friendly Design</div>
         <div class="about-feature__desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.
+          I have experience in designing and implementing mobile-friendly applications using responsive design principles and modern CSS frameworks.
         </div>
       </div>
       <div class="about-feature">
@@ -34,8 +40,7 @@
         </div>
         <div class="about-feature__title">Async Programming</div>
         <div class="about-feature__desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi
-          tristique senectus.
+          I have experience in building asynchronous applications using modern JavaScript frameworks and libraries.
         </div>
       </div>
     </div>
@@ -43,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
+import { PhCode, PhDevices, PhLightning } from '@phosphor-icons/vue'
 </script>
 
 <style scoped lang="scss">
@@ -82,7 +87,7 @@ import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
 
 .about-feature {
   background: rgb(var(--background) / 0.6);
-  border: 1px solid rgb(var(--primary) / 0.08);
+  border: 1px solid rgb(var(--primary) / 0.5);
   border-radius: 12px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
 
@@ -94,11 +99,7 @@ import { PhCode, PhCloud, PhLightning } from '@phosphor-icons/vue'
   transition:
     border-color 0.2s,
     box-shadow 0.2s;
-
-  &:hover {
-    border-color: rgb(var(--primary) / 0.18);
-    box-shadow: 0 4px 32px rgb(var(--primary) / 0.08);
-  }
+  pointer-events: none;
 
   &__icon {
     display: flex;

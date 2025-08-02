@@ -80,7 +80,7 @@
   border-radius: 12px;
   padding: 2.2rem 2rem 2rem 2rem;
   box-shadow: 0 2px 16px rgb(var(--primary) / 0.04);
-  border: 1px solid rgb(var(--primary) / 0.08);
+  border: 1px solid rgb(var(--primary) / 0.5);
   display: flex;
   flex-direction: column;
   gap: 1rem;

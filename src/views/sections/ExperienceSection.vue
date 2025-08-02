@@ -8,24 +8,27 @@
       <div class="experience-card">
         <div class="experience-card__header">
           <div>
-            <div class="experience-card__role">Junior Software Engineer</div>
-            <div class="experience-card__company">Lorem Ipsum Corp</div>
+            <div class="experience-card__role">Software Engineer</div>
+            <div class="experience-card__company">Dirt Legal</div>
           </div>
-          <div class="experience-card__period">2022 – Present</div>
+          <div class="experience-card__period">2024 – Present</div>
         </div>
         <div class="experience-card__desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu
-          consectetur cursus, nisl erat dictum urna.
+          Developed and maintained reusable Vue 3 UI components for a product-level 
+          e-commerce platform. Independently led development of custom Shopify features 
+          and proactively communicated with stakeholders to gather details, clarify 
+          requirements, and ensure cross-functional alignment.
         </div>
         <div class="experience-card__tags">
-          <span class="tag">React</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">AWS</span>
+          <span class="tag">C#</span>
+          <span class="tag">Vue.js</span>
           <span class="tag">TypeScript</span>
-          <span class="tag">Docker</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Liquid</span>
         </div>
       </div>
-      <div class="experience-card">
+      <!-- <div class="experience-card">
         <div class="experience-card__header">
           <div>
             <div class="experience-card__role">Full Stack Developer</div>
@@ -64,7 +67,7 @@
           <span class="tag">HTML5</span>
           <span class="tag">Firebase</span>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -84,13 +87,13 @@
   &__title {
     font-size: 2.4rem;
     font-weight: 700;
-    color: var(--foreground);
+    color: rgb(var(--foreground));
     text-align: center;
     margin-bottom: 0.5rem;
   }
   &__subtitle {
     font-size: 1.1rem;
-    color: var(--foreground);
+    color: rgb(var(--foreground));
     opacity: 0.7;
     text-align: center;
     margin-bottom: 2.5rem;
@@ -108,8 +111,9 @@
 
 .experience-card {
   background: rgb(var(--background) / 0.6);
-  border: 1px solid rgb(var(--primary) / 0.08);
+  border: 1px solid rgb(var(--primary) / 0.5);
   border-radius: 12px;
+  
   padding: 2rem 2rem 1.5rem 2rem;
   box-shadow: 0 2px 16px rgb(var(--primary) / 0.04);
   display: flex;
@@ -139,7 +143,7 @@
   }
   &__company {
     font-size: 1.05rem;
-    color: rgb(var(--primary));
+    color: rgb(var(--foreground) / 0.5);
     font-weight: 500;
     margin-bottom: 0.1rem;
   }
@@ -169,8 +173,8 @@
 
 .tag {
   display: inline-block;
-  background: rgb(var(--primary) / 0.1);
-  color: #4fc3f7;
+  background: rgb(var(--primary) / 0.45);
+  color: rgb(var(--primary-foreground));
   font-size: 0.95rem;
   font-weight: 500;
   border-radius: 6px;

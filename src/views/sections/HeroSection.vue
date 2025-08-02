@@ -4,7 +4,7 @@
 
     <h2 class="hero-section__subtitle">Full Stack Developer &amp; Software Engineer</h2>
     <p class="hero-section__description">
-      I build accessible and mobile-friendly web applications that cater to diverse audiences.
+      Currently based in South Florida
     </p>
     <div class="hero-section__actions">
       <a href="#projects" class="btn btn-primary">View My Work</a>
