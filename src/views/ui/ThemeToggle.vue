@@ -23,9 +23,9 @@ const { theme, toggleTheme } = useTheme()
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  border: 1.5px solid rgba(var(--primary), 0.5);
+  border: 1.5px solid rgba(var(--foreground), 0.2);
   background: transparent;
-  color: rgb(var(--primary));
+  color: rgb(var(--foreground));
   font-size: 1.5rem;
   cursor: pointer;
   transition:
@@ -38,7 +38,7 @@ const { theme, toggleTheme } = useTheme()
 }
 .toggle-box:focus,
 .toggle-box:hover {
-  border-color: rgb(var(--primary));
-  background: rgb(var(--primary) / 0.07);
+  border-color: rgb(var(--foreground));
+  background: rgb(var(--foreground) / 0.1);
 }
 </style>

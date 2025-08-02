@@ -33,7 +33,7 @@ const pointer = props.pointer ?? false
     text-shadow: 0 0 20px rgb(var(--primary) / 0.2);
   }
   &-name {
-    color: rgb(var(--primary));
+    color: rgb(var(--foreground));
     font-weight: bold;
     margin: 0 0.25rem;
     text-shadow: 0 0 32px rgb(var(--primary) / 0.7);
