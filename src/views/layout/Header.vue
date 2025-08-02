@@ -59,7 +59,7 @@ function scrollTo(section: string) {
     &__nav {
       display: flex;
       justify-content: center;
-      width: 100%;
+      width: 50%;
     }
 
     &__toggle-icons {
