@@ -173,5 +173,4 @@
 </style>
 
 <script setup lang="ts">
-import Logo from '../layout/Logo.vue'
 </script>
