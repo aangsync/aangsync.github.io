@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import Header from './views/layout/Header.vue'
 import CloudBackground from './views/layout/CloudBackground.vue'
-import HeroSection from './views/sections/HeroSection.vue'
-import AboutSection from './views/sections/AboutSection.vue'
-import ExperienceSection from './views/sections/ExperienceSection.vue'
-import ProjectsSection from './views/sections/ProjectsSection.vue'
-import ContactSection from './views/sections/ContactSection.vue'
+import HeroSection from './views/sections/HeroSection/HeroSection.vue'
+import AboutSection from './views/sections/AboutSection/AboutSection.vue'
+import ExperienceSection from './views/sections/ExperienceSection/ExperienceSection.vue'
+import ProjectsSection from './views/sections/ProjectsSection/ProjectsSection.vue'
+import ContactSection from './views/sections/ContactSection/ContactSection.vue'
 import { useClouds } from './composables/useClouds'
 const { cloudsEnabled } = useClouds()
 </script>
