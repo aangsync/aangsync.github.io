@@ -23,9 +23,7 @@
         @click="mobileMenuOpen = !mobileMenuOpen"
         :class="{ 'header-section__hamburger--open': mobileMenuOpen }"
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <PhList :size="32" weight="regular" />
       </button>
     </div>
   </header>
@@ -54,6 +52,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { PhList } from '@phosphor-icons/vue'
 import Logo from './Logo.vue'
 import CloudToggle from '../ui/CloudToggle.vue'
 import ThemeToggle from '../ui/ThemeToggle.vue'
@@ -68,17 +67,17 @@ function scrollTo(section: string) {
 }
 
 function checkStickyPosition() {
-  const aboutSection = document.getElementById('about')
-  if (aboutSection) {
-    const aboutTop = aboutSection.offsetTop
-    const scrollPosition = window.scrollY
-    isSticky.value = scrollPosition >= aboutTop
+  const heroSection = document.getElementById('hero')
+  if (heroSection) {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
+    const scrollPosition = window.scrollY + 76
+    isSticky.value = scrollPosition >= heroBottom
   }
 }
 
 onMounted(() => {
   window.addEventListener('scroll', checkStickyPosition)
-  checkStickyPosition() // Check initial position
+  checkStickyPosition()
 })
 
 onUnmounted(() => {
@@ -105,6 +104,7 @@ onUnmounted(() => {
 
   &--sticky {
     position: fixed;
+    top: 0;
     background: rgb(var(--background) / 0.95);
     backdrop-filter: blur(12px);
     box-shadow: 0 2px 16px rgb(var(--primary) / 0.1);
@@ -158,43 +158,30 @@ onUnmounted(() => {
 
     &__hamburger {
       display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 24px;
-      height: 24px;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
       background: transparent;
       border: none;
       cursor: pointer;
       padding: 0;
       margin-left: auto;
       z-index: 1001;
+      border-radius: 10px;
+      color: rgb(var(--foreground));
+      transition: all 0.3s ease;
       
       @media (min-width: 768px) {
         display: none;
       }
 
-      span {
-        width: 24px;
-        height: 3px;
-        background: rgb(var(--foreground));
-        border-radius: 3px;
-        transition: all 0.3s ease;
-        transform-origin: 1px;
+      &:hover {
+        background: rgb(var(--foreground) / 0.1);
       }
 
       &--open {
-        span:first-child {
-          transform: rotate(45deg);
-        }
-        
-        span:nth-child(2) {
-          opacity: 0;
-          transform: translateX(20px);
-        }
-        
-        span:nth-child(3) {
-          transform: rotate(-45deg);
-        }
+        background: rgb(var(--foreground) / 0.1);
       }
     }
   }

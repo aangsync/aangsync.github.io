@@ -28,11 +28,11 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isVisible = ref(false)
 
 function checkScrollPosition() {
-  const aboutSection = document.getElementById('about')
-  if (aboutSection) {
-    const aboutTop = aboutSection.offsetTop
+  const heroSection = document.getElementById('hero')
+  if (heroSection) {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
     const scrollPosition = window.scrollY
-    isVisible.value = scrollPosition > aboutTop
+    isVisible.value = scrollPosition >= heroBottom
   }
 }
 
