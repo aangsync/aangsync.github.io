@@ -66,7 +66,7 @@ defineProps<{
   &__period {
     font-size: 0.98rem;
     color: #4fc3f7;
-    background: rgb(var(--primary) / 0.07);
+    background: #30496e;
     border-radius: 8px;
     padding: 0.3rem 1.1rem;
     font-weight: 500;
@@ -89,8 +89,8 @@ defineProps<{
 
 .tag {
   display: inline-block;
-  background: rgb(var(--primary) / 0.45);
-  color: rgb(var(--primary-foreground));
+  background: rgb(var(--primary) / 0.13);
+  color: rgb(var(--primary));
   font-size: 0.95rem;
   font-weight: 500;
   border-radius: 6px;

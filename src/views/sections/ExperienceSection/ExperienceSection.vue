@@ -26,21 +26,6 @@ const experiences: Experience[] = [
     description: 'Developed and maintained reusable Vue 3 UI components for a product-level e-commerce platform. Independently led development of custom Shopify features and proactively communicated with stakeholders to gather details, clarify requirements, and ensure cross-functional alignment.',
     tags: ['C#', 'Vue.js', 'TypeScript', 'Bootstrap', 'CSS', 'Liquid']
   }
-  // Uncomment and modify these as needed:
-  // {
-  //   role: 'Full Stack Developer',
-  //   company: 'Dolor Sit Ltd',
-  //   period: '2020 – 2022',
-  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur.',
-  //   tags: ['Vue.js', 'Python', 'PostgreSQL', 'Redis', 'GCP']
-  // },
-  // {
-  //   role: 'Frontend Developer',
-  //   company: 'Amet Startup',
-  //   period: '2019 – 2020',
-  //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus.',
-  //   tags: ['JavaScript', 'React', 'CSS3', 'HTML5', 'Firebase']
-  // }
 ];
 </script>
 

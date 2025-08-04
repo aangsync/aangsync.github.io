@@ -73,7 +73,7 @@ defineProps<{
     flex: 1 1 auto;
   }
   &__badge {
-    background: #22334d;
+    background: #30496e;
     color: #4fc3f7;
     font-size: 0.95rem;
     font-weight: 500;
