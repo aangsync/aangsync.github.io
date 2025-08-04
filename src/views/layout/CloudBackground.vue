@@ -1,5 +1,5 @@
 <template>
-  <div v-if="enabled" class="cloud-bg" @mousemove="onMouseMove">
+  <div v-if="enabled" class="cloud-bg">
     <div v-for="(cloud, i) in clouds" :key="i" class="cloud" :style="cloudStyle(i)">
       <svg viewBox="0 0 200 90" class="cloud-svg">
         <path :d="cloudPath(cloud.type)" :fill="'var(--cloud-color)'" />
@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 const props = defineProps<{ enabled: boolean }>()
 
 const clouds = [
@@ -38,11 +38,17 @@ function cloudPath(type: string) {
 const mouse = ref({ x: 0.5, y: 0.5 })
 
 function onMouseMove(e: MouseEvent) {
-  const bg = e.currentTarget as HTMLElement
-  const rect = bg.getBoundingClientRect()
-  mouse.value.x = (e.clientX - rect.left) / rect.width
-  mouse.value.y = (e.clientY - rect.top) / rect.height
+  mouse.value.x = e.clientX / window.innerWidth
+  mouse.value.y = e.clientY / window.innerHeight
 }
+
+onMounted(() => {
+  document.addEventListener('mousemove', onMouseMove)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('mousemove', onMouseMove)
+})
 
 function cloudStyle(i: number) {
   // variability in strength of how clouds follow the cursor
@@ -67,7 +73,7 @@ function cloudStyle(i: number) {
   position: fixed;
   inset: 0;
   z-index: 0;
-  pointer-events: auto;
+  pointer-events: none;
 }
 .cloud {
   position: absolute;
