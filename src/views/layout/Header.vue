@@ -1,37 +1,94 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header--sticky': isSticky }">
     <div class="header-section">
       <Logo @click="scrollTo('hero')" :pointer="true" class="header-section__logo" />
-      <nav class="header-section__nav">
+      
+      <!-- Desktop Navigation -->
+      <nav class="header-section__nav header-section__nav--desktop">
         <a @click.prevent="scrollTo('about')">About</a>
         <a @click.prevent="scrollTo('experience')">Experience</a>
         <a @click.prevent="scrollTo('projects')">Projects</a>
         <a @click.prevent="scrollTo('contact')">Contact</a>
       </nav>
-      <div class="header-section__toggle-icons">
+      
+      <!-- Desktop Toggle Icons -->
+      <div class="header-section__toggle-icons header-section__toggle-icons--desktop">
         <CloudToggle :enabled="cloudsEnabled" @toggle="toggleClouds" />
         <ThemeToggle />
       </div>
+      
+      <!-- Mobile Hamburger Menu -->
+      <button 
+        class="header-section__hamburger" 
+        @click="mobileMenuOpen = !mobileMenuOpen"
+        :class="{ 'header-section__hamburger--open': mobileMenuOpen }"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+  
+  <!-- Mobile Menu Overlay -->
+  <div 
+    class="mobile-menu-overlay" 
+    :class="{ 'mobile-menu-overlay--open': mobileMenuOpen }"
+    @click="mobileMenuOpen = false"
+  ></div>
+  
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer" :class="{ 'mobile-menu-drawer--open': mobileMenuOpen }">
+    <nav class="mobile-menu-drawer__nav">
+      <a @click.prevent="scrollTo('about'); mobileMenuOpen = false">About</a>
+      <a @click.prevent="scrollTo('experience'); mobileMenuOpen = false">Experience</a>
+      <a @click.prevent="scrollTo('projects'); mobileMenuOpen = false">Projects</a>
+      <a @click.prevent="scrollTo('contact'); mobileMenuOpen = false">Contact</a>
+    </nav>
+    <div class="mobile-menu-drawer__toggles">
+      <CloudToggle :enabled="cloudsEnabled" @toggle="toggleClouds" />
+      <ThemeToggle />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 import Logo from './Logo.vue'
 import CloudToggle from '../ui/CloudToggle.vue'
 import ThemeToggle from '../ui/ThemeToggle.vue'
 import { useClouds } from '@/composables/useClouds'
 
 const { cloudsEnabled, toggleClouds } = useClouds()
+const mobileMenuOpen = ref(false)
+const isSticky = ref(false)
 
 function scrollTo(section: string) {
   document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
 }
+
+function checkStickyPosition() {
+  const aboutSection = document.getElementById('about')
+  if (aboutSection) {
+    const aboutTop = aboutSection.offsetTop
+    const scrollPosition = window.scrollY
+    isSticky.value = scrollPosition >= aboutTop
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', checkStickyPosition)
+  checkStickyPosition() // Check initial position
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', checkStickyPosition)
+})
 </script>
 
 <style lang="scss" scoped>
 .header {
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
   height: 76px;
@@ -40,14 +97,32 @@ function scrollTo(section: string) {
   justify-content: center;
   backdrop-filter: blur(8px);
   z-index: 100;
-  padding: 0.5rem 10rem;
   background: rgb(var(--background) / 0.8);
   border-bottom: 1px solid rgb(var(--foreground) / 0.25);
+  width: 100%;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+
+  &--sticky {
+    position: fixed;
+    background: rgb(var(--background) / 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 16px rgb(var(--primary) / 0.1);
+  }
+
+  @media (min-width: 768px) {
+    padding: 0.5rem 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0.5rem 4rem;
+  }
 
   .header-section {
     display: flex;
     align-items: center;
     width: 100%;
+    max-width: 1280px;
 
     &__logo {
       display: flex;
@@ -57,19 +132,155 @@ function scrollTo(section: string) {
     }
 
     &__nav {
-      display: flex;
-      justify-content: center;
-      width: 50%;
+      &--desktop {
+        display: none;
+        
+        @media (min-width: 768px) {
+          display: flex;
+          justify-content: center;
+          width: 50%;
+        }
+      }
     }
 
     &__toggle-icons {
+      &--desktop {
+        display: none;
+        
+        @media (min-width: 768px) {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          flex: 1;
+        }
+      }
+    }
+
+    &__hamburger {
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex: 1;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 24px;
+      height: 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-left: auto;
+      z-index: 1001;
+      
+      @media (min-width: 768px) {
+        display: none;
+      }
+
+      span {
+        width: 24px;
+        height: 3px;
+        background: rgb(var(--foreground));
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        transform-origin: 1px;
+      }
+
+      &--open {
+        span:first-child {
+          transform: rotate(45deg);
+        }
+        
+        span:nth-child(2) {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        
+        span:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
     }
   }
 }
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: rgb(var(--background));
+  backdrop-filter: blur(8px);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 76px 2rem 2rem 2rem;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &--open {
+    right: 0;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2rem;
+    flex: 1;
+    
+    a {
+      padding: 1.25rem 0;
+      color: rgb(var(--foreground));
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      border-bottom: 1px solid rgb(var(--foreground) / 0.1);
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: rgb(var(--foreground) / 0.7);
+      }
+      
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__toggles {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(var(--foreground) / 0.1);
+  }
+}
+
 nav a {
   margin: 0 1rem;
   color: rgb(var(--foreground));

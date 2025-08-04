@@ -6,6 +6,7 @@ import AboutSection from './views/sections/AboutSection/AboutSection.vue'
 import ExperienceSection from './views/sections/ExperienceSection/ExperienceSection.vue'
 import ProjectsSection from './views/sections/ProjectsSection/ProjectsSection.vue'
 import ContactSection from './views/sections/ContactSection/ContactSection.vue'
+import GoToTopButton from './views/ui/GoToTopButton.vue'
 import { useClouds } from './composables/useClouds'
 const { cloudsEnabled } = useClouds()
 </script>
@@ -25,6 +26,7 @@ const { cloudsEnabled } = useClouds()
       </section>
       <section id="contact" class="app__section app__section--contact"><ContactSection /></section>
     </main>
+    <GoToTopButton />
   </div>
 </template>
 
@@ -33,14 +35,22 @@ const { cloudsEnabled } = useClouds()
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
   &__main {
     flex: 1 0 auto;
-    max-width: 900px;
-    margin: 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    
+    @media (min-width: 768px) {
+      max-width: 900px;
+      margin: 0 auto;
+    }
   }
 
   &__section {
