@@ -72,10 +72,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 76px);
+  min-height: 100vh;
   text-align: center;
   margin-top: 0;
-  padding-bottom: 76px;
+  padding-top: 76px;
+  padding-bottom: 2rem;
 
   &__title {
     font-size: 2.8rem;

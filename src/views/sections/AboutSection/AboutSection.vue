@@ -57,7 +57,11 @@ const features: AboutFeature[] = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0 4rem 0;
+  padding: 4rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
 
   &__content {
     margin: 0 auto 2.5rem auto;

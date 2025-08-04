@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0 4rem 0;
+  padding: 4rem 1.5rem;
 
   &__heading {
     text-align: center;
@@ -68,7 +68,6 @@
     width: 100%;
     max-width: 1400px;
     align-items: center;
-    padding: 0 2vw;
   }
 }
 
@@ -151,30 +150,24 @@
 }
 
 @media (max-width: 1100px) {
-  .contact-section__content {
-    flex-direction: column;
-    gap: 2.5rem;
-    align-items: center;
-    padding: 0 1vw;
-  }
   .contact-form {
     max-width: 100%;
     width: 100%;
   }
 }
+
 @media (max-width: 700px) {
-  .contact-section {
-    padding: 2.5rem 0 2.5rem 0;
-  }
   .contact-section__heading h2 {
     font-size: 2rem;
   }
-  .contact-section__content {
-    gap: 1.5rem;
-    padding: 0 0.5vw;
-  }
+  
   .contact-form {
-    padding: 1.2rem 1rem 1rem 1rem;
+    padding: 1.2rem 1rem;
+    
+    &__row {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 }
 </style>

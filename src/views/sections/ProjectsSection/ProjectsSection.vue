@@ -42,7 +42,7 @@ const projects: Project[] = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0 4rem 0;
+  padding: 4rem 1.5rem;
 
   &__title {
     font-size: 2.4rem;

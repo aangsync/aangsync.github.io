@@ -35,7 +35,7 @@ const experiences: Experience[] = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0 4rem 0;
+  padding: 4rem 1.5rem;
 
   &__title {
     font-size: 2.4rem;
@@ -59,12 +59,6 @@ const experiences: Experience[] = [
     flex-direction: column;
     gap: 2rem;
     margin: 0 auto;
-  }
-}
-
-@media (max-width: 700px) {
-  .experience-section__list {
-    padding: 0 0.5rem;
   }
 }
 </style>
