@@ -62,7 +62,7 @@ function cloudStyle(i: number) {
     top: `calc(${y * 100}% - ${size / 2}px)`,
     width: `${size}px`,
     height: `${size * 0.45}px`,
-    zIndex: 0,
+    zIndex: 2,
   }
 }
 </script>
@@ -72,7 +72,7 @@ function cloudStyle(i: number) {
 .cloud-bg {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
 }
 .cloud {

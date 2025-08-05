@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Header from './views/layout/Header.vue'
 import CloudBackground from './views/layout/CloudBackground.vue'
+import StarBackground from './views/layout/StarBackground.vue'
 import HeroSection from './views/sections/HeroSection/HeroSection.vue'
 import AboutSection from './views/sections/AboutSection/AboutSection.vue'
 import ExperienceSection from './views/sections/ExperienceSection/ExperienceSection.vue'
@@ -12,6 +13,7 @@ const { cloudsEnabled } = useClouds()
 </script>
 
 <template>
+  <StarBackground />
   <CloudBackground :enabled="cloudsEnabled" />
   <div class="app">
     <Header />
