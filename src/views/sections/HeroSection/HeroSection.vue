@@ -8,7 +8,7 @@
     </p>
     <div class="hero-section__actions">
       <a href="#projects" class="btn btn-primary">View My Work</a>
-      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      <a @click="scrollToContact" class="btn btn-outline">Get In Touch</a>
     </div>
   </section>
 </template>
@@ -102,4 +102,13 @@
 </style>
 
 <script setup lang="ts">
+const scrollToContact = () => {
+  const contactSection = document.querySelector('.contact-section')
+  if (contactSection) {
+    contactSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
 </script>

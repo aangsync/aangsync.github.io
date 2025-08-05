@@ -42,21 +42,6 @@
             <circle cx="4" cy="4" r="2" />
           </svg>
         </a>
-        <a href="mailto:albertang99@gmail.com" aria-label="Email">
-          <svg
-          width="32"
-          height="32"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          viewBox="0 0 24 24"
-          >
-          <rect x="2" y="4" width="20" height="16" rx="2" />
-          <path d="m22 6-10 7L2 6" />
-        </svg>
-      </a>
     </div>
     <p class="contact-methods">If you like my work at all or just want to say hi, feel free to reach out through any of these platforms, or send me an email directly at 
       <a href="mailto:albertang99@gmail.com" class="email-link">albertang99@gmail.com</a>
