@@ -27,11 +27,18 @@ const projects: Project[] = [
     codeUrl: 'https://github.com/aangsync/ecommerce-demo/tree/master'
   },
   {
-    title: 'Game Pigeon Word Hunt Solver',
+    title: 'Word Hunt Solver',
     year: '2023',
     description: 'Developed a solver for Game Pigeon\'s Word Hunt game, utilizing DFS and Trie nodes to optimize word search and improve user experience.',
     tags: ['Python'],
     codeUrl: 'https://github.com/aangsync/Word-Hunt-Solver'
+  },
+  {
+    title: 'This Website',
+    year: '2025',
+    description: 'Created a personal website to showcase my portfolio in a way that is visually appealing and easy to navigate.',
+    tags: ['Vue.js', 'TypeScript', 'CSS', 'SCSS', 'HTML'],
+    codeUrl: 'https://github.com/aangsync/aangsync.github.io'
   }
 ];
 </script>
@@ -63,7 +70,7 @@ const projects: Project[] = [
     width: 100%;
     max-width: 1200px;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
     margin: 0 auto;
     flex-wrap: wrap;

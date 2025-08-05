@@ -47,8 +47,8 @@ defineProps<{
   border-radius: 12px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   
-  min-width: 320px;
-  max-width: 370px;
+  min-width: 350px;
+  max-width: 400px;
   flex: 1 1 320px;
   display: flex;
   flex-direction: column;
