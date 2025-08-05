@@ -4,7 +4,7 @@
 
     <h2 class="hero-section__subtitle">Full Stack Developer &amp; Software Engineer</h2>
     <p class="hero-section__description">
-      Currently based in South Florida
+      Location: Miami-Fort Lauderdale Area📍
     </p>
     <div class="hero-section__actions">
       <a href="#projects" class="btn btn-primary">View My Work</a>
