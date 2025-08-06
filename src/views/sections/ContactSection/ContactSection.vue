@@ -2,8 +2,23 @@
   <section class="contact-section">
     <div class="contact-section__heading">
       <h2>Get In Touch</h2>
+      <p class="contact-methods">If you like my work at all or just want to say hi, feel free to reach out through any of these platforms!
+    </p>
     </div>
     <div class="contact-section__content">
+      <form class="contact-form" action="https://formspree.io/f/mblkprzp" method="POST">
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
       <div class="contact-socials">
         <a href="https://github.com/aangsync" target="_blank" aria-label="GitHub" rel="noopener">
           <svg
@@ -16,19 +31,19 @@
           stroke-linejoin="round"
           viewBox="0 0 24 24"
           >
-          <path
-          d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
-          />
-        </svg>
-      </a>
-      <a
-      href="https://www.linkedin.com/in/albert-ang/"
-      target="_blank"
-      aria-label="LinkedIn"
-      rel="noopener"
-      >
-      <svg
-      width="32"
+            <path
+            d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+            />
+          </svg>
+        </a>
+        <a
+        href="https://www.linkedin.com/in/albert-ang/"
+        target="_blank"
+        aria-label="LinkedIn"
+        rel="noopener"
+        >
+          <svg
+            width="32"
             height="32"
             fill="none"
             stroke="currentColor"
@@ -36,16 +51,13 @@
             stroke-linecap="round"
             stroke-linejoin="round"
             viewBox="0 0 24 24"
-            >
+          > 
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
             <rect x="2" y="9" width="4" height="12" />
             <circle cx="4" cy="4" r="2" />
           </svg>
         </a>
-    </div>
-    <p class="contact-methods">If you like my work at all or just want to say hi, feel free to reach out through any of these platforms, or send me an email directly at 
-      <a href="mailto:albertang99@gmail.com" class="email-link">albertang99@gmail.com</a>
-    </p>
+      </div>
   </div>
   </section>
 </template>
@@ -60,7 +72,6 @@
 
   &__heading {
     text-align: center;
-    margin-bottom: 1rem;
 
     h2 {
       font-size: 2.4rem;
@@ -121,6 +132,73 @@
   }
 }
 
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem 0;
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    
+    label {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgb(var(--foreground));
+      margin-bottom: 0.5rem;
+    }
+    
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid rgb(var(--foreground) / 0.2);
+      border-radius: 8px;
+      background: rgb(var(--background));
+      color: rgb(var(--foreground));
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: rgb(var(--primary));
+      }
+      
+      &::placeholder {
+        color: rgb(var(--foreground) / 0.5);
+      }
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 0.875rem 2rem;
+    background: rgb(var(--primary) / 0.8);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgb(var(--primary));
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgb(var(--primary) / 0.3);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
 .contact-methods {
   text-align: center;
   font-size: 1.1rem;
@@ -152,6 +230,25 @@
       h2 {
         font-size: 2rem;
       }
+    }
+  }
+  
+  .contact-form {
+    margin: 1.5rem 0;
+    
+    .form-group {
+      margin-bottom: 1.25rem;
+      
+      input,
+      textarea {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.95rem;
+      }
+    }
+    
+    .submit-btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
     }
   }
   
