@@ -1,6 +1,6 @@
 import { ref, watchEffect } from 'vue'
 
-const cloudsEnabled = ref(localStorage.getItem('clouds-enabled') === 'true')
+const cloudsEnabled = ref(localStorage.getItem('clouds-enabled') === 'false' ? false : true)
 
 watchEffect(() => {
   localStorage.setItem('clouds-enabled', String(cloudsEnabled.value))
