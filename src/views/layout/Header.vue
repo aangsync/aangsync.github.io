@@ -37,16 +37,16 @@
   
   <!-- Mobile Menu Drawer -->
   <div class="mobile-menu-drawer" :class="{ 'mobile-menu-drawer--open': mobileMenuOpen }">
+    <div class="mobile-menu-drawer__toggles">
+      <CloudToggle :enabled="cloudsEnabled" @toggle="toggleClouds" />
+      <ThemeToggle />
+    </div>
     <nav class="mobile-menu-drawer__nav">
       <a @click.prevent="scrollTo('about'); mobileMenuOpen = false">About</a>
       <a @click.prevent="scrollTo('experience'); mobileMenuOpen = false">Experience</a>
       <a @click.prevent="scrollTo('projects'); mobileMenuOpen = false">Projects</a>
       <a @click.prevent="scrollTo('contact'); mobileMenuOpen = false">Contact</a>
     </nav>
-    <div class="mobile-menu-drawer__toggles">
-      <CloudToggle :enabled="cloudsEnabled" @toggle="toggleClouds" />
-      <ThemeToggle />
-    </div>
   </div>
 </template>
 
@@ -236,7 +236,7 @@ onUnmounted(() => {
     display: flex;
     flex-direction: column;
     gap: 0;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
     flex: 1;
     
     a {
@@ -263,8 +263,8 @@ onUnmounted(() => {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgb(var(--foreground) / 0.1);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(var(--foreground) / 0.1);
   }
 }
 
