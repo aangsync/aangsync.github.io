@@ -43,7 +43,7 @@ defineProps<{
 <style scoped lang="scss">
 .project-card {
   background: rgb(var(--background) / 0.6);
-  border: 1px solid rgb(var(--primary) / 0.5);
+  border: 2px solid rgb(var(--primary) / 0.7);
   border-radius: 12px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   
@@ -106,8 +106,8 @@ defineProps<{
 
 .tag {
   display: inline-block;
-  background: rgb(var(--primary) / 0.13);
-  color: rgb(var(--primary));
+  background: #30496e;
+  color: #4fc3f7;
   font-size: 0.95rem;
   font-weight: 500;
   border-radius: 6px;
@@ -120,7 +120,7 @@ defineProps<{
   display: flex;
   align-items: center;
   gap: 0.4em;
-  background: rgb(var(--primary) / 0.07);
+  background: rgb(var(--primary) / 0.3);
   color: rgb(var(--foreground));
   font-size: 1rem;
   font-weight: 500;
@@ -138,8 +138,7 @@ defineProps<{
   z-index: 10;
 
   &:hover {
-    background: rgb(var(--primary) / 0.15);
-    color: rgb(var(--primary));
+    background: rgb(var(--primary) / 0.5);
     transform: translateY(-1px);
   }
 

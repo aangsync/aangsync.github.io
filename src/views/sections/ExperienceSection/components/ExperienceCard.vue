@@ -27,7 +27,7 @@ defineProps<{
 <style scoped lang="scss">
 .experience-card {
   background: rgb(var(--background) / 0.6);
-  border: 1px solid rgb(var(--primary) / 0.5);
+  border: 2px solid rgb(var(--primary) / 0.7);
   border-radius: 12px;
   
   padding: 2rem 2rem 1.5rem 2rem;
@@ -89,8 +89,8 @@ defineProps<{
 
 .tag {
   display: inline-block;
-  background: rgb(var(--primary) / 0.13);
-  color: rgb(var(--primary));
+  background: #30496e;
+  color: #4fc3f7;
   font-size: 0.95rem;
   font-weight: 500;
   border-radius: 6px;

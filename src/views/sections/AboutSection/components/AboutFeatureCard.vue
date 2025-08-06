@@ -21,7 +21,7 @@ defineProps<{
 <style scoped lang="scss">
 .about-feature {
   background: rgb(var(--background) / 0.6);
-  border: 1px solid rgb(var(--primary) / 0.5);
+  border: 2px solid rgb(var(--primary) / 0.7);
   border-radius: 12px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
 

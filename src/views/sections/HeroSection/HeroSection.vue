@@ -80,11 +80,11 @@
 }
 .btn-outline {
   background: none;
-  color: rgb(var(--primary));
-  border: 1px solid rgb(var(--primary));
+  color: rgb(var(--foreground));
+  border: 1px solid rgb(var(--foreground) / 0.3);
 }
 .btn-outline:hover {
-  background: rgb(var(--primary) / 0.1);
+  background: rgb(var(--foreground) / 0.2);
 }
 
 @media (max-width: 600px) {
