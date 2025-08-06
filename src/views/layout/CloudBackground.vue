@@ -1,6 +1,6 @@
 <template>
   <div v-if="enabled" class="cloud-bg">
-    <div v-for="(cloud, i) in clouds" :key="i" class="cloud" :style="cloudStyle(i)">
+    <div v-for="(cloud, i) in visibleClouds" :key="i" class="cloud" :style="cloudStyle(i)">
       <svg viewBox="0 0 200 90" class="cloud-svg">
         <path :d="cloudPath(cloud.type)" :fill="'var(--cloud-color)'" />
       </svg>
@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 const props = defineProps<{ enabled: boolean }>()
 
 const clouds = [
@@ -36,24 +36,50 @@ function cloudPath(type: string) {
 }
 
 const mouse = ref({ x: 0.5, y: 0.5 })
+const isMobile = ref(false)
+
+function checkMobile() {
+  isMobile.value = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}
+
+const visibleClouds = computed(() => {
+  if (!isMobile.value) return clouds
+  
+  // Decentralizes clouds on mobile
+  return clouds.filter((cloud, i) => {
+    const isEdgeCloud = cloud.base.x < 0.2 || cloud.base.x > 0.8 || cloud.base.y < 0.15 || cloud.base.y > 0.85
+    const isEvenIndex = i % 2 === 0
+    return isEdgeCloud || isEvenIndex
+  })
+})
 
 function onMouseMove(e: MouseEvent) {
   mouse.value.x = e.clientX / window.innerWidth
   mouse.value.y = e.clientY / window.innerHeight
 }
 
+function onResize() {
+  checkMobile()
+}
+
 onMounted(() => {
+  checkMobile()
   document.addEventListener('mousemove', onMouseMove)
+  window.addEventListener('resize', onResize)
 })
 
 onUnmounted(() => {
   document.removeEventListener('mousemove', onMouseMove)
+  window.removeEventListener('resize', onResize)
 })
 
 function cloudStyle(i: number) {
-  // variability in strength of how clouds follow the cursor
-  const strength = 0.08 + (i / clouds.length) * 0.18
-  const c = clouds[i]
+  // Reduce parallax effect on mobile to keep clouds more in background
+  const baseStrength = isMobile.value ? 0.02 : 0.08
+  const strengthRange = isMobile.value ? 0.05 : 0.18
+  const strength = baseStrength + (i / visibleClouds.value.length) * strengthRange
+  
+  const c = visibleClouds.value[i]
   const x = c.base.x + (mouse.value.x - 0.5) * strength
   const y = c.base.y + (mouse.value.y - 0.5) * strength
   const size = c.base.size
@@ -90,5 +116,9 @@ function cloudStyle(i: number) {
 }
 .cloud-bg {
   --cloud-color: hsl(210, 50%, 85%, 0.4);
+  
+  @media (max-width: 768px) {
+    --cloud-color: hsl(210, 50%, 85%, 0.2);
+  }
 }
 </style>
