@@ -20,6 +20,13 @@ import type { Project } from '@/types';
 
 const projects: Project[] = [
   {
+    title: 'This Website',
+    year: '2025',
+    description: 'Created a personal website to showcase my portfolio in a way that is visually appealing and easy to navigate.',
+    tags: ['Vue.js', 'TypeScript', 'CSS', 'SCSS', 'HTML'],
+    codeUrl: 'https://github.com/aangsync/aangsync.github.io'
+  },
+  {
     title: 'E-Commerce Dashboard',
     year: '2024',
     description: 'Developed an full stack content management system with user authentication, API endpoint integration and protection, and a responsive frontend interface.',
@@ -33,13 +40,6 @@ const projects: Project[] = [
     tags: ['Python'],
     codeUrl: 'https://github.com/aangsync/Word-Hunt-Solver'
   },
-  {
-    title: 'This Website',
-    year: '2025',
-    description: 'Created a personal website to showcase my portfolio in a way that is visually appealing and easy to navigate.',
-    tags: ['Vue.js', 'TypeScript', 'CSS', 'SCSS', 'HTML'],
-    codeUrl: 'https://github.com/aangsync/aangsync.github.io'
-  }
 ];
 </script>
 
